@@ -1,0 +1,18 @@
+{
+  "name": "High Quality",
+  "preset": "high",
+  "mesh": {
+    "compression": true,
+    "vertexPosition": 16,
+    "vertexTexCoord": 14,
+    "vertexNormal": 12
+  },
+  "texture": {
+    "enabled": true,
+    "format": "UASTC",
+    "quality": 10,
+    "maxDimension": 4096,
+    "powerOfTwo": false
+  }
+}
+
