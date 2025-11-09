@@ -75,16 +75,23 @@ actor ProcessRunner {
             process.standardOutput = stdoutPipe
             process.standardError = stderrPipe
             
-            // Capture output
+            // Use actor-isolated storage for captured data
+            let dataLock = NSLock()
             var stdoutData = Data()
             var stderrData = Data()
             
             stdoutPipe.fileHandleForReading.readabilityHandler = { handle in
-                stdoutData.append(handle.availableData)
+                let data = handle.availableData
+                dataLock.lock()
+                stdoutData.append(data)
+                dataLock.unlock()
             }
             
             stderrPipe.fileHandleForReading.readabilityHandler = { handle in
-                stderrData.append(handle.availableData)
+                let data = handle.availableData
+                dataLock.lock()
+                stderrData.append(data)
+                dataLock.unlock()
             }
             
             // Termination handler
@@ -94,11 +101,13 @@ actor ProcessRunner {
                 stderrPipe.fileHandleForReading.readabilityHandler = nil
                 
                 // Get final output
+                dataLock.lock()
                 stdoutData.append(stdoutPipe.fileHandleForReading.readDataToEndOfFile())
                 stderrData.append(stderrPipe.fileHandleForReading.readDataToEndOfFile())
                 
                 let stdout = String(data: stdoutData, encoding: .utf8) ?? ""
                 let stderr = String(data: stderrData, encoding: .utf8) ?? ""
+                dataLock.unlock()
                 
                 let output = ProcessOutput(
                     stdout: stdout,
@@ -155,13 +164,16 @@ actor ProcessRunner {
             process.standardOutput = stdoutPipe
             process.standardError = stderrPipe
             
+            let dataLock = NSLock()
             var stdoutData = Data()
             var stderrData = Data()
             
             // Streaming output handler
             stdoutPipe.fileHandleForReading.readabilityHandler = { handle in
                 let data = handle.availableData
+                dataLock.lock()
                 stdoutData.append(data)
+                dataLock.unlock()
                 
                 if let line = String(data: data, encoding: .utf8), !line.isEmpty {
                     outputHandler(line)
@@ -170,7 +182,9 @@ actor ProcessRunner {
             
             stderrPipe.fileHandleForReading.readabilityHandler = { handle in
                 let data = handle.availableData
+                dataLock.lock()
                 stderrData.append(data)
+                dataLock.unlock()
                 
                 if let line = String(data: data, encoding: .utf8), !line.isEmpty {
                     outputHandler(line)
@@ -181,11 +195,13 @@ actor ProcessRunner {
                 stdoutPipe.fileHandleForReading.readabilityHandler = nil
                 stderrPipe.fileHandleForReading.readabilityHandler = nil
                 
+                dataLock.lock()
                 stdoutData.append(stdoutPipe.fileHandleForReading.readDataToEndOfFile())
                 stderrData.append(stderrPipe.fileHandleForReading.readDataToEndOfFile())
                 
                 let stdout = String(data: stdoutData, encoding: .utf8) ?? ""
                 let stderr = String(data: stderrData, encoding: .utf8) ?? ""
+                dataLock.unlock()
                 
                 let output = ProcessOutput(
                     stdout: stdout,

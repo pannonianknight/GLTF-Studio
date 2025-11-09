@@ -11,7 +11,6 @@
 		F7F201DB2EC0DF950028C0C9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F201C62EC0DE220028C0C9 /* ContentView.swift */; };
 		F7F201DC2EC0DF950028C0C9 /* FilePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F201C72EC0DE220028C0C9 /* FilePickerView.swift */; };
 		F7F201DD2EC0DF950028C0C9 /* MeshOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F201C82EC0DE220028C0C9 /* MeshOptionsView.swift */; };
-		F7F201DE2EC0DF950028C0C9 /* PresetSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F201C92EC0DE220028C0C9 /* PresetSelectorView.swift */; };
 		F7F201DF2EC0DF950028C0C9 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F201CA2EC0DE220028C0C9 /* StatsView.swift */; };
 		F7F201E02EC0DF950028C0C9 /* TextureOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F201CB2EC0DE220028C0C9 /* TextureOptionsView.swift */; };
 		F7F201E12EC0E5B30028C0C9 /* GLTFStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F201D12EC0DE220028C0C9 /* GLTFStats.swift */; };
@@ -21,6 +20,9 @@
 		F7F201E52EC0E5B30028C0C9 /* GLTFPackService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F201CE2EC0DE220028C0C9 /* GLTFPackService.swift */; };
 		F7F201E62EC0E5B30028C0C9 /* ProcessRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F201CF2EC0DE220028C0C9 /* ProcessRunner.swift */; };
 		F7F201E82EC0E9F50028C0C9 /* gltfpack in Resources */ = {isa = PBXBuildFile; fileRef = F7F201E72EC0E9F50028C0C9 /* gltfpack */; };
+		F7F201EA2EC115B40028C0C9 /* SVGIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F201E92EC115B40028C0C9 /* SVGIcon.swift */; };
+		F7F201F22EC119DC0028C0C9 /* sword-spin.png in Resources */ = {isa = PBXBuildFile; fileRef = F7F201F02EC119DB0028C0C9 /* sword-spin.png */; };
+		F7F201F32EC119DC0028C0C9 /* pointy-sword.png in Resources */ = {isa = PBXBuildFile; fileRef = F7F201F12EC119DC0028C0C9 /* pointy-sword.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +57,6 @@
 		F7F201C62EC0DE220028C0C9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F7F201C72EC0DE220028C0C9 /* FilePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilePickerView.swift; sourceTree = "<group>"; };
 		F7F201C82EC0DE220028C0C9 /* MeshOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshOptionsView.swift; sourceTree = "<group>"; };
-		F7F201C92EC0DE220028C0C9 /* PresetSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetSelectorView.swift; sourceTree = "<group>"; };
 		F7F201CA2EC0DE220028C0C9 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		F7F201CB2EC0DE220028C0C9 /* TextureOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextureOptionsView.swift; sourceTree = "<group>"; };
 		F7F201CD2EC0DE220028C0C9 /* FileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileService.swift; sourceTree = "<group>"; };
@@ -66,6 +67,9 @@
 		F7F201D32EC0DE220028C0C9 /* ProcessingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingState.swift; sourceTree = "<group>"; };
 		F7F201D82EC0DEF70028C0C9 /* GLTFStudioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLTFStudioApp.swift; sourceTree = "<group>"; };
 		F7F201E72EC0E9F50028C0C9 /* gltfpack */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = gltfpack; path = Resources/Binaries/gltfpack; sourceTree = "<group>"; };
+		F7F201E92EC115B40028C0C9 /* SVGIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGIcon.swift; sourceTree = "<group>"; };
+		F7F201F02EC119DB0028C0C9 /* sword-spin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sword-spin.png"; path = "Resources/Icons/sword-spin.png"; sourceTree = "<group>"; };
+		F7F201F12EC119DC0028C0C9 /* pointy-sword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pointy-sword.png"; path = "Resources/Icons/pointy-sword.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -114,6 +118,8 @@
 		F7F2017F2EC0DD040028C0C9 = {
 			isa = PBXGroup;
 			children = (
+				F7F201F12EC119DC0028C0C9 /* pointy-sword.png */,
+				F7F201F02EC119DB0028C0C9 /* sword-spin.png */,
 				F7F201E72EC0E9F50028C0C9 /* gltfpack */,
 				F7F201D82EC0DEF70028C0C9 /* GLTFStudioApp.swift */,
 				F7F201D42EC0DE220028C0C9 /* Models */,
@@ -169,6 +175,7 @@
 		F7F201C52EC0DE220028C0C9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F7F201ED2EC115D60028C0C9 /* Icons */,
 				F7F201BC2EC0DE220028C0C9 /* Binaries */,
 				F7F201C02EC0DE220028C0C9 /* Licenses */,
 				F7F201C42EC0DE220028C0C9 /* Presets */,
@@ -179,10 +186,10 @@
 		F7F201CC2EC0DE220028C0C9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F7F201E92EC115B40028C0C9 /* SVGIcon.swift */,
 				F7F201C62EC0DE220028C0C9 /* ContentView.swift */,
 				F7F201C72EC0DE220028C0C9 /* FilePickerView.swift */,
 				F7F201C82EC0DE220028C0C9 /* MeshOptionsView.swift */,
-				F7F201C92EC0DE220028C0C9 /* PresetSelectorView.swift */,
 				F7F201CA2EC0DE220028C0C9 /* StatsView.swift */,
 				F7F201CB2EC0DE220028C0C9 /* TextureOptionsView.swift */,
 			);
@@ -207,6 +214,13 @@
 				F7F201D32EC0DE220028C0C9 /* ProcessingState.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		F7F201ED2EC115D60028C0C9 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Icons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,6 +344,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7F201F22EC119DC0028C0C9 /* sword-spin.png in Resources */,
+				F7F201F32EC119DC0028C0C9 /* pointy-sword.png in Resources */,
 				F7F201E82EC0E9F50028C0C9 /* gltfpack in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,7 +380,7 @@
 				F7F201DB2EC0DF950028C0C9 /* ContentView.swift in Sources */,
 				F7F201DC2EC0DF950028C0C9 /* FilePickerView.swift in Sources */,
 				F7F201DD2EC0DF950028C0C9 /* MeshOptionsView.swift in Sources */,
-				F7F201DE2EC0DF950028C0C9 /* PresetSelectorView.swift in Sources */,
+				F7F201EA2EC115B40028C0C9 /* SVGIcon.swift in Sources */,
 				F7F201DF2EC0DF950028C0C9 /* StatsView.swift in Sources */,
 				F7F201E02EC0DF950028C0C9 /* TextureOptionsView.swift in Sources */,
 				F7F201DA2EC0DF4A0028C0C9 /* GLTFStudioApp.swift in Sources */,

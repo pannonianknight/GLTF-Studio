@@ -21,7 +21,7 @@ struct GLTFStudioApp: App {
             ContentView()
         }
         .windowStyle(.hiddenTitleBar)
-        .windowResizability(.contentSize)
+        .windowResizability(.contentMinSize)
         .commands {
             // File Menu
             CommandGroup(replacing: .newItem) {

@@ -152,8 +152,6 @@ actor GLTFPackService {
         
         // Parse output for statistics
         stats.parseGltfpackOutput(output.combinedOutput)
-        
-        // Update stats with final information
         stats.finishProcessing()
         
         return stats

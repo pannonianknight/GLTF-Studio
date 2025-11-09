@@ -27,7 +27,7 @@ enum OptimizationPreset: String, Codable, CaseIterable {
 }
 
 /// Mesh optimization settings
-struct MeshOptimization: Codable, Equatable {
+struct MeshOptimization: Codable, Equatable, Sendable {
     var compression: Bool
     var vertexPosition: Int // 8-16 bits
     var vertexTexCoord: Int // 8-16 bits
@@ -48,7 +48,7 @@ struct MeshOptimization: Codable, Equatable {
 }
 
 /// Texture optimization settings
-struct TextureOptimization: Codable, Equatable {
+struct TextureOptimization: Codable, Equatable, Sendable {
     var enabled: Bool
     var format: TextureFormat
     var quality: Int // 1-255
@@ -70,7 +70,7 @@ struct TextureOptimization: Codable, Equatable {
 }
 
 /// Complete optimization configuration
-struct OptimizationConfig: Codable, Equatable {
+struct OptimizationConfig: Codable, Equatable, Sendable {
     var name: String
     var preset: OptimizationPreset
     var mesh: MeshOptimization
@@ -169,7 +169,7 @@ struct OptimizationConfig: Codable, Equatable {
     
     // MARK: - Command Generation
     
-    func buildGltfpackArguments(inputPath: String, outputPath: String) -> [String] {
+    nonisolated func buildGltfpackArguments(inputPath: String, outputPath: String) -> [String] {
         var args: [String] = []
         
         // Input/Output

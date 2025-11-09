@@ -8,7 +8,7 @@
 import Foundation
 
 /// Statistics for glTF file before and after optimization
-struct GLTFStats: Equatable {
+struct GLTFStats: Equatable, Sendable {
     
     // MARK: - File Information
     
@@ -85,7 +85,7 @@ struct GLTFStats: Equatable {
     
     // MARK: - Initialization
     
-    init(inputPath: String, outputPath: String? = nil) {
+    nonisolated init(inputPath: String, outputPath: String? = nil) {
         self.inputPath = inputPath
         self.outputPath = outputPath
         
@@ -98,11 +98,11 @@ struct GLTFStats: Equatable {
     
     // MARK: - Update Methods
     
-    mutating func startProcessing() {
+    nonisolated mutating func startProcessing() {
         startTime = Date()
     }
     
-    mutating func finishProcessing() {
+    nonisolated mutating func finishProcessing() {
         endTime = Date()
         
         if let start = startTime, let end = endTime {
@@ -117,7 +117,7 @@ struct GLTFStats: Equatable {
         }
     }
     
-    mutating func updateOutputPath(_ path: String) {
+    nonisolated mutating func updateOutputPath(_ path: String) {
         outputPath = path
         
         // Immediately get output file size if file exists
@@ -129,7 +129,7 @@ struct GLTFStats: Equatable {
     
     // MARK: - Parsing from gltfpack output
     
-    mutating func parseGltfpackOutput(_ output: String) {
+    nonisolated mutating func parseGltfpackOutput(_ output: String) {
         // Parse output for statistics
         // Example lines:
         // "Meshes: 5"

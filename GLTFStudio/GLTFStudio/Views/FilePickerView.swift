@@ -7,6 +7,7 @@
 
 import SwiftUI
 import UniformTypeIdentifiers
+import AppKit
 
 struct FilePickerView: View {
     
@@ -16,114 +17,117 @@ struct FilePickerView: View {
     private let fileService = FileService()
     
     var body: some View {
-        VStack(spacing: 16) {
-            // Input File Section
-            GroupBox {
-                VStack(alignment: .leading, spacing: 12) {
-                    Label("Input File", systemImage: "doc.fill")
-                        .font(.headline)
-                    
-                    if let inputURL = appState.inputFileURL {
-                        HStack {
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text(inputURL.lastPathComponent)
-                                    .font(.system(.body, design: .monospaced))
-                                    .lineLimit(1)
-                                    .truncationMode(.middle)
-                                
-                                Text(inputURL.deletingLastPathComponent().path)
-                                    .font(.caption)
-                                    .foregroundColor(.secondary)
-                                    .lineLimit(1)
-                                    .truncationMode(.middle)
-                            }
-                            
-                            Spacer()
-                            
-                            Button(action: { appState.inputFileURL = nil }) {
-                                Image(systemName: "xmark.circle.fill")
-                                    .foregroundColor(.secondary)
-                            }
-                            .buttonStyle(.plain)
-                        }
-                        .padding(8)
-                        .background(Color(nsColor: .controlBackgroundColor))
-                        .cornerRadius(6)
-                    } else {
-                        // Drop Zone
-                        VStack(spacing: 8) {
-                            Image(systemName: "square.and.arrow.down")
-                                .font(.system(size: 32))
-                                .foregroundColor(isTargeted ? .accentColor : .secondary)
-                            
-                            Text("Drop GLB/GLTF file here")
-                                .font(.headline)
-                            
-                            Text("or")
+        VStack(spacing: 20) {
+            // Drop Zone - Dynamic content (FIXED HEIGHT)
+            Group {
+                if let inputURL = appState.inputFileURL {
+                    // FILE SELECTED - Show file info INSIDE drop zone
+                    HStack {
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text("Selected:")
                                 .font(.caption)
                                 .foregroundColor(.secondary)
                             
-                            Button("Choose File...") {
-                                selectInputFile()
-                            }
+                            Text(inputURL.lastPathComponent)
+                                .font(.system(.body, design: .monospaced))
+                                .fontWeight(.medium)
+                                .lineLimit(3)
+                                .truncationMode(.middle)
                         }
-                        .frame(maxWidth: .infinity)
-                        .frame(height: 120)
-                        .background(
-                            RoundedRectangle(cornerRadius: 8)
-                                .fill(Color(nsColor: .controlBackgroundColor).opacity(isTargeted ? 0.8 : 0.3))
-                        )
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 8)
-                                .stroke(isTargeted ? Color.accentColor : Color.secondary.opacity(0.3), lineWidth: 1)
-                        )
-                        .onDrop(of: [.fileURL], isTargeted: $isTargeted) { providers in
-                            handleDrop(providers: providers)
+                        
+                        Spacer()
+                        
+                        Button(action: { 
+                            appState.inputFileURL = nil
+                            appState.outputFileURL = nil
+                        }) {
+                            Image(systemName: "xmark.circle.fill")
+                                .font(.system(size: 32))
+                                .foregroundColor(.secondary)
                         }
+                        .buttonStyle(.plain)
+                        .help("Clear selection")
                     }
-                }
-                .padding(8)
-            }
-            
-            // Output File Section
-            GroupBox {
-                VStack(alignment: .leading, spacing: 12) {
-                    Label("Output File", systemImage: "doc.badge.gearshape.fill")
-                        .font(.headline)
-                    
-                    if let outputURL = appState.outputFileURL {
-                        HStack {
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text(outputURL.lastPathComponent)
-                                    .font(.system(.body, design: .monospaced))
-                                    .lineLimit(1)
-                                    .truncationMode(.middle)
-                                
-                                Text(outputURL.deletingLastPathComponent().path)
-                                    .font(.caption)
-                                    .foregroundColor(.secondary)
-                                    .lineLimit(1)
-                                    .truncationMode(.middle)
-                            }
-                            
-                            Spacer()
-                            
-                            Button("Change...") {
-                                selectOutputFile()
-                            }
-                            .buttonStyle(.bordered)
-                        }
-                        .padding(8)
-                        .background(Color(nsColor: .controlBackgroundColor))
-                        .cornerRadius(6)
-                    } else {
-                        Text("Output location will be auto-generated")
+                    .padding(20)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 140)
+                    .background(
+                        RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.accentColor.opacity(0.15))
+                    )
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 12)
+                            .stroke(Color.accentColor, lineWidth: 2)
+                    )
+                    .onDrop(of: [.fileURL], isTargeted: $isTargeted) { providers in
+                        handleDrop(providers: providers)
+                    }
+                } else {
+                    // NO FILE - Show drop zone
+                    VStack(spacing: 16) {
+                        Image(systemName: "square.and.arrow.down")
+                            .font(.system(size: 40))
+                            .foregroundColor(isTargeted ? .accentColor : .secondary)
+                        
+                        Text("Drop GLB/GLTF")
+                            .font(.headline)
+                        
+                        Text("or")
                             .font(.caption)
                             .foregroundColor(.secondary)
-                            .padding(8)
+                        
+                        Button("Choose File") {
+                            selectInputFile()
+                        }
+                        .controlSize(.large)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 140)
+                    .padding(16)
+                    .background(
+                        RoundedRectangle(cornerRadius: 12)
+                            .fill(Color(nsColor: .controlBackgroundColor).opacity(isTargeted ? 0.8 : 0.4))
+                    )
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 12)
+                            .stroke(isTargeted ? Color.accentColor : Color.secondary.opacity(0.3), lineWidth: 1)
+                    )
+                    .onDrop(of: [.fileURL], isTargeted: $isTargeted) { providers in
+                        handleDrop(providers: providers)
                     }
                 }
-                .padding(8)
+            }
+            .animation(.easeInOut(duration: 0.2), value: appState.inputFileURL != nil)
+            
+            Spacer()
+            
+            // Output folder selection (iznad Optimize button-a)
+            VStack(alignment: .leading, spacing: 8) {
+                HStack {
+                    Text("Output Folder")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                    
+                    Spacer()
+                    
+                    Button("Choose...") {
+                        selectOutputFolder()
+                    }
+                    .buttonStyle(.borderless)
+                    .controlSize(.small)
+                }
+                
+                if let outputURL = appState.outputFileURL {
+                    Text(outputURL.deletingLastPathComponent().path)
+                        .font(.caption2)
+                        .foregroundColor(.secondary)
+                        .lineLimit(1)
+                        .truncationMode(.middle)
+                } else {
+                    Text("Same as input file")
+                        .font(.caption2)
+                        .foregroundColor(.secondary)
+                }
             }
         }
     }
@@ -143,19 +147,24 @@ struct FilePickerView: View {
         }
     }
     
-    private func selectOutputFile() {
+    private func selectOutputFolder() {
         Task {
-            var suggestedFilename: String?
-            if let inputURL = appState.inputFileURL {
-                suggestedFilename = await fileService.suggestedOutputFilename(for: inputURL)
-            }
+            let panel = NSOpenPanel()
+            panel.canChooseFiles = false
+            panel.canChooseDirectories = true
+            panel.canCreateDirectories = true
+            panel.allowsMultipleSelection = false
+            panel.message = "Choose output folder for optimized files"
             
-            if let url = await fileService.presentSaveDialog(
-                suggestedFilename: suggestedFilename,
-                allowedFileTypes: ["glb", "gltf"]
-            ) {
+            let response = await MainActor.run { panel.runModal() }
+            
+            if response == .OK, let folderURL = panel.url, let inputURL = appState.inputFileURL {
+                let outputFilename = await fileService.suggestedOutputFilename(for: inputURL)
+                let outputURL = folderURL.appendingPathComponent(outputFilename)
+                
                 await MainActor.run {
-                    appState.selectOutputFile(url)
+                    appState.selectOutputFile(outputURL)
+                    print("📁 [FILEPICKER] Output folder: \(folderURL.path)")
                 }
             }
         }

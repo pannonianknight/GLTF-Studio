@@ -10,6 +10,7 @@ import SwiftUI
 struct MeshOptionsView: View {
     
     @EnvironmentObject var appState: AppState
+    @State private var meshEnabled: Bool = true
     @State private var meshCompression: Bool = true
     @State private var vertexPosition: Double = 14
     @State private var vertexTexCoord: Double = 12
@@ -24,51 +25,61 @@ struct MeshOptionsView: View {
                     
                     Spacer()
                     
-                    Toggle("Compression", isOn: $meshCompression)
-                        .onChange(of: meshCompression) { _, _ in
+                    Toggle("Enabled", isOn: $meshEnabled)
+                        .onChange(of: meshEnabled) { _, _ in
                             updateConfig()
                         }
                 }
                 
-                VStack(alignment: .leading, spacing: 16) {
-                    // Vertex Position Bits
-                    quantizationSlider(
-                        title: "Vertex Position",
-                        value: $vertexPosition,
-                        description: "Position precision (higher = better quality)"
-                    )
-                    
-                    Divider()
-                    
-                    // Texture Coordinates Bits
-                    quantizationSlider(
-                        title: "Texture Coordinates",
-                        value: $vertexTexCoord,
-                        description: "UV mapping precision"
-                    )
-                    
-                    Divider()
-                    
-                    // Normals Bits
-                    quantizationSlider(
-                        title: "Normals",
-                        value: $vertexNormal,
-                        description: "Normal vector precision"
-                    )
+                if meshEnabled {
+                    VStack(alignment: .leading, spacing: 16) {
+                        // Compression toggle
+                        Toggle("Mesh Compression", isOn: $meshCompression)
+                            .onChange(of: meshCompression) { _, _ in
+                                updateConfig()
+                            }
+                        
+                        Divider()
+                        
+                        // Vertex Position Bits
+                        quantizationSlider(
+                            title: "Vertex Position",
+                            value: $vertexPosition,
+                            description: "Position precision (higher = better quality)"
+                        )
+                        
+                        Divider()
+                        
+                        // Texture Coordinates Bits
+                        quantizationSlider(
+                            title: "Texture Coordinates",
+                            value: $vertexTexCoord,
+                            description: "UV mapping precision"
+                        )
+                        
+                        Divider()
+                        
+                        // Normals Bits
+                        quantizationSlider(
+                            title: "Normals",
+                            value: $vertexNormal,
+                            description: "Normal vector precision"
+                        )
+                        
+                        // Info Box
+                        HStack(spacing: 8) {
+                            Image(systemName: "info.circle.fill")
+                                .foregroundColor(.blue)
+                            
+                            Text("Higher bit counts preserve more detail but result in larger files")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                        }
+                        .padding(8)
+                        .background(Color.blue.opacity(0.1))
+                        .cornerRadius(6)
+                    }
                 }
-                
-                // Info Box
-                HStack(spacing: 8) {
-                    Image(systemName: "info.circle.fill")
-                        .foregroundColor(.blue)
-                    
-                    Text("Higher bit counts preserve more detail but result in larger files")
-                        .font(.caption)
-                        .foregroundColor(.secondary)
-                }
-                .padding(8)
-                .background(Color.blue.opacity(0.1))
-                .cornerRadius(6)
             }
             .padding(8)
         }
@@ -86,38 +97,38 @@ struct MeshOptionsView: View {
         value: Binding<Double>,
         description: String
     ) -> some View {
-        VStack(alignment: .leading, spacing: 8) {
-            HStack {
-                Text(title)
-                    .font(.subheadline)
-                    .fontWeight(.medium)
-                
-                Spacer()
-                
-                Text("\(Int(value.wrappedValue)) bits")
-                    .font(.system(.subheadline, design: .monospaced))
-                    .foregroundColor(.secondary)
-            }
-            
-            Slider(value: value, in: 8...16, step: 1)
-                .onChange(of: value.wrappedValue) { _, _ in
-                    updateConfig()
+            VStack(alignment: .leading, spacing: 8) {
+                HStack {
+                    Text(title)
+                        .font(.subheadline)
+                        .fontWeight(.medium)
+                    
+                    Spacer()
+                    
+                    Text("\(Int(value.wrappedValue)) bits")
+                        .font(.system(.subheadline, design: .monospaced))
+                        .foregroundColor(.secondary)
                 }
-            
-            HStack {
-                Text("8")
-                    .font(.caption2)
-                    .foregroundColor(.secondary)
-                Spacer()
-                Text("12")
-                    .font(.caption2)
-                    .foregroundColor(.secondary)
-                Spacer()
-                Text("16")
-                    .font(.caption2)
-                    .foregroundColor(.secondary)
-            }
-            
+                
+                Slider(value: value, in: 8...16, step: 1)
+                    .onChange(of: value.wrappedValue) { _, _ in
+                        updateConfig()
+                    }
+                
+                HStack {
+                    Text("8")
+                        .font(.caption2)
+                        .foregroundColor(.secondary)
+                    Spacer()
+                    Text("12")
+                        .font(.caption2)
+                        .foregroundColor(.secondary)
+                    Spacer()
+                    Text("16")
+                        .font(.caption2)
+                        .foregroundColor(.secondary)
+                }
+                
             Text(description)
                 .font(.caption)
                 .foregroundColor(.secondary)
@@ -125,6 +136,10 @@ struct MeshOptionsView: View {
     }
     
     private func loadConfigValues() {
+        meshEnabled = appState.config.mesh.compression || 
+                      appState.config.mesh.vertexPosition < 16 ||
+                      appState.config.mesh.vertexTexCoord < 16 ||
+                      appState.config.mesh.vertexNormal < 16
         meshCompression = appState.config.mesh.compression
         vertexPosition = Double(appState.config.mesh.vertexPosition)
         vertexTexCoord = Double(appState.config.mesh.vertexTexCoord)
@@ -133,18 +148,20 @@ struct MeshOptionsView: View {
     
     private func updateConfig() {
         var newConfig = appState.config
-        newConfig.mesh.compression = meshCompression
-        newConfig.mesh.vertexPosition = Int(vertexPosition)
-        newConfig.mesh.vertexTexCoord = Int(vertexTexCoord)
-        newConfig.mesh.vertexNormal = Int(vertexNormal)
+        
+        if !meshEnabled {
+            // Disable mesh optimization - use max quality (no compression)
+            newConfig.mesh.compression = false
+            newConfig.mesh.vertexPosition = 16
+            newConfig.mesh.vertexTexCoord = 16
+            newConfig.mesh.vertexNormal = 16
+        } else {
+            newConfig.mesh.compression = meshCompression
+            newConfig.mesh.vertexPosition = Int(vertexPosition)
+            newConfig.mesh.vertexTexCoord = Int(vertexTexCoord)
+            newConfig.mesh.vertexNormal = Int(vertexNormal)
+        }
+        
         appState.updateCustomConfig(newConfig)
     }
 }
-
-#Preview {
-    MeshOptionsView()
-        .environmentObject(AppState())
-        .frame(width: 500)
-        .padding()
-}
-

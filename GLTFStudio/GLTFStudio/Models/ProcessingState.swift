@@ -127,8 +127,8 @@ class AppState: ObservableObject {
     // MARK: - Published Properties
     
     @Published var processingState: ProcessingState = .idle
-    @Published var selectedPreset: OptimizationPreset = .balanced
-    @Published var config: OptimizationConfig = .balanced
+    @Published var selectedPreset: OptimizationPreset = .low
+    @Published var config: OptimizationConfig = .lowQuality
     @Published var inputFileURL: URL?
     @Published var outputFileURL: URL?
     

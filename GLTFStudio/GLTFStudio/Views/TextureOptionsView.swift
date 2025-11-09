@@ -71,8 +71,9 @@ struct TextureOptionsView: View {
                                         .foregroundColor(.secondary)
                                 }
                                 
-                                Slider(value: $textureQuality, in: 1...255, step: 1)
-                                    .onChange(of: textureQuality) { _, _ in
+                                Slider(value: $textureQuality, in: 1...255)
+                                    .onChange(of: textureQuality) { _, newValue in
+                                        textureQuality = round(newValue)
                                         updateConfig()
                                     }
                                 
