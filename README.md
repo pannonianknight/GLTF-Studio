@@ -23,7 +23,7 @@
 ## 🛠️ Installation
 
 ### Option 1: Download Pre-built App (Recommended)
-1. Download the latest release from [Releases](https://github.com/yourusername/GLTFStudio/releases)
+1. Download the latest release from [Releases](https://github.com/pannonianknight/GLTF-Studio/releases)
 2. Open the DMG file
 3. Drag GLTFStudio.app to Applications folder
 4. Right-click and select "Open" on first launch (macOS Gatekeeper)
@@ -50,22 +50,32 @@ cmake --build . --target gltfpack --config Release
 #### Build the App:
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/GLTFStudio.git
-   cd GLTFStudio
+   git clone https://github.com/pannonianknight/GLTF-Studio.git
+   cd GLTF-Studio
    ```
 
-2. Copy gltfpack binary:
+2. Run the build script (automatically builds gltfpack):
    ```bash
-   mkdir -p GLTFStudio/Resources/Binaries
-   cp ~/Desktop/meshoptimizer/gltfpack GLTFStudio/Resources/Binaries/
-   chmod +x GLTFStudio/Resources/Binaries/gltfpack
+   ./build_gltfpack.sh
+   ```
+   
+   Or copy manually if you already have gltfpack:
+   ```bash
+   cp ~/Desktop/meshoptimizer/gltfpack GLTFStudio/GLTFStudio/Resources/Binaries/
+   chmod +x GLTFStudio/GLTFStudio/Resources/Binaries/gltfpack
    ```
 
-3. Open `GLTFStudio.xcodeproj` in Xcode
+3. Open `GLTFStudio/GLTFStudio/GLTFStudio.xcodeproj` in Xcode
 
-4. Select your development team in Signing & Capabilities
+4. Add files to project:
+   - Right-click on GLTFStudio folder → Add Files
+   - Select Models, Services, Views, Resources folders
+   - Uncheck "Copy items if needed"
+   - Check "Add to targets: GLTFStudio"
 
-5. Build and run (⌘R)
+5. Select your development team in Signing & Capabilities
+
+6. Build and run (⌘R)
 
 ## 📖 Usage
 
@@ -129,6 +139,7 @@ GLTFStudio is optimized for preparing models for:
 - Large files (>100MB) may take several minutes to process
 - First run may show security warning (right-click > Open to bypass)
 - Progress bar shows indeterminate progress (no percentage yet)
+- Texture compression requires proper entitlements (included in build)
 
 ## 🗺️ Roadmap
 
@@ -142,7 +153,7 @@ GLTFStudio is optimized for preparing models for:
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+Contributions are welcome!
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
@@ -170,9 +181,8 @@ See `Resources/Licenses/` directory for full license texts.
 
 ## 📧 Contact
 
-- GitHub Issues: [Report a bug](https://github.com/yourusername/GLTFStudio/issues)
-- Twitter: [@yourhandle](https://twitter.com/yourhandle)
-- Email: your.email@example.com
+- GitHub Issues: [Report a bug](https://github.com/pannonianknight/GLTF-Studio/issues)
+- GitHub Repo: [GLTF-Studio](https://github.com/pannonianknight/GLTF-Studio)
 
 ---
 

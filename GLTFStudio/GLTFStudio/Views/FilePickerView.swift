@@ -51,32 +51,32 @@ struct FilePickerView: View {
                         .cornerRadius(6)
                     } else {
                         // Drop Zone
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 8)
-                                .strokeBorder(
-                                    style: StrokeStyle(lineWidth: 2, dash: [8])
-                                )
+                        VStack(spacing: 8) {
+                            Image(systemName: "square.and.arrow.down")
+                                .font(.system(size: 32))
                                 .foregroundColor(isTargeted ? .accentColor : .secondary)
                             
-                            VStack(spacing: 8) {
-                                Image(systemName: "square.and.arrow.down")
-                                    .font(.system(size: 32))
-                                    .foregroundColor(isTargeted ? .accentColor : .secondary)
-                                
-                                Text("Drop GLB/GLTF file here")
-                                    .font(.headline)
-                                
-                                Text("or")
-                                    .font(.caption)
-                                    .foregroundColor(.secondary)
-                                
-                                Button("Choose File...") {
-                                    selectInputFile()
-                                }
+                            Text("Drop GLB/GLTF file here")
+                                .font(.headline)
+                            
+                            Text("or")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                            
+                            Button("Choose File...") {
+                                selectInputFile()
                             }
-                            .padding()
                         }
+                        .frame(maxWidth: .infinity)
                         .frame(height: 120)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color(nsColor: .controlBackgroundColor).opacity(isTargeted ? 0.8 : 0.3))
+                        )
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 8)
+                                .stroke(isTargeted ? Color.accentColor : Color.secondary.opacity(0.3), lineWidth: 1)
+                        )
                         .onDrop(of: [.fileURL], isTargeted: $isTargeted) { providers in
                             handleDrop(providers: providers)
                         }
