@@ -342,8 +342,10 @@ struct ContentView: View {
                         .controlSize(.small)
                         .progressViewStyle(.circular)
                 } else {
-                    Image(systemName: "bolt.fill")
-                        .font(.body)
+                    Image("PointySword")
+                        .resizable()
+                        .renderingMode(.template)
+                        .frame(width: 18, height: 18)
                 }
                 
                 Text(appState.processingState.isProcessing ? "Optimizing..." : "Optimize")
