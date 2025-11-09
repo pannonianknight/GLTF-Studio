@@ -1,4 +1,7 @@
-# GLTFStudio
+# GLTFStudio<
+
+<img width="256" height="256" alt="Icon-iOS-Default-256x256@1x" src="https://github.com/user-attachments/assets/e830bde5-57bf-4511-85b7-fa40c6a13e56" />
+
 
 <div align="center">
   <h3>🎨 Professional glTF/GLB Optimization for macOS</h3>
