@@ -118,7 +118,7 @@ cmake --build . --target gltfpack --config Release
 ## 🎯 Target Platforms
 
 GLTFStudio is optimized for preparing models for:
-- **iOS/Android** (ARCore, ARKit, Filament)
+- **iOS/Android** (Filament)
 - **WebGL/WebGPU** (Three.js, Babylon.js)
 - **Game Engines** (Unity, Unreal, Godot)
 
