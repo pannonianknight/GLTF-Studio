@@ -157,7 +157,7 @@ struct GLTFStats: Equatable, Sendable {
         }
     }
     
-    private func extractNumber(from line: String) -> Int? {
+    private nonisolated func extractNumber(from line: String) -> Int? {
         let components = line.components(separatedBy: ":")
         guard components.count >= 2 else { return nil }
         
