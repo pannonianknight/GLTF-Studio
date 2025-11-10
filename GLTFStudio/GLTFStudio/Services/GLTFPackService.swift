@@ -11,6 +11,7 @@ import Foundation
 actor GLTFPackService {
     
     private let processRunner = ProcessRunner()
+    private let gltfParser = GLTFParser()
     
     // MARK: - Binary Location
     
@@ -88,15 +89,38 @@ actor GLTFPackService {
         
         print("✅ [GLTFPACK] Found at: \(gltfpackPath)")
         
+        // Parse glTF to detect features
+        var hasAnimations = false
+        var modelInfo: String = ""
+        
+        do {
+            let info = try await gltfParser.parseFile(at: inputURL)
+            hasAnimations = info.hasAnimations
+            modelInfo = try await gltfParser.getSummary(for: inputURL)
+            print("📊 [GLTFPACK] Model info: \(modelInfo)")
+            
+            if hasAnimations {
+                print("🎬 [GLTFPACK] Animations detected - preserving skin weights")
+            }
+        } catch {
+            print("⚠️ [GLTFPACK] Failed to parse glTF: \(error.localizedDescription)")
+        }
+        
         // Prepare stats
         var stats = GLTFStats(inputPath: inputURL.path, outputPath: outputURL.path)
         stats.startProcessing()
         
-        // Build command arguments
-        let arguments = config.buildGltfpackArguments(
+        // Build command arguments with animation awareness
+        var arguments = config.buildGltfpackArguments(
             inputPath: inputURL.path,
             outputPath: outputURL.path
         )
+        
+        // Add skin weight normalization only if NO animations
+        if !hasAnimations {
+            arguments.append("-si")  // Normalize skin weights
+            print("🔧 [GLTFPACK] Adding -si (skin weight normalization)")
+        }
         
         // Log command for debugging
         let command = ([gltfpackPath] + arguments).joined(separator: " ")

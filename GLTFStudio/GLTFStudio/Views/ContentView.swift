@@ -342,8 +342,10 @@ struct ContentView: View {
                         .controlSize(.small)
                         .progressViewStyle(.circular)
                 } else {
-                    Image(systemName: "bolt.fill")
-                        .font(.body)
+                    Image("PointySword")
+                        .resizable()
+                        .renderingMode(.template)
+                        .frame(width: 18, height: 18)
                 }
                 
                 Text(appState.processingState.isProcessing ? "Optimizing..." : "Optimize")
@@ -401,6 +403,7 @@ struct ContentView: View {
         appendLog("📂 Input: \(inputURL.lastPathComponent)")
         appendLog("📂 Output: \(outputURL.lastPathComponent)")
         appendLog("⚙️ Preset: \(appState.config.preset.displayName)")
+        appendLog("🔍 Analyzing model...")
         
         if textureEnabled {
             appendLog("🎨 Texture: \(appState.config.texture.format.rawValue), Quality: \(appState.config.texture.quality)")

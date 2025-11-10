@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F7313A8B2EC21717003DC984 /* GLTFParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7313A8A2EC21717003DC984 /* GLTFParser.swift */; };
 		F7F201DA2EC0DF4A0028C0C9 /* GLTFStudioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F201D82EC0DEF70028C0C9 /* GLTFStudioApp.swift */; };
 		F7F201DB2EC0DF950028C0C9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F201C62EC0DE220028C0C9 /* ContentView.swift */; };
 		F7F201DC2EC0DF950028C0C9 /* FilePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F201C72EC0DE220028C0C9 /* FilePickerView.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F7313A8A2EC21717003DC984 /* GLTFParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLTFParser.swift; sourceTree = "<group>"; };
 		F7F201882EC0DD040028C0C9 /* GLTFStudio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GLTFStudio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7F201952EC0DD060028C0C9 /* GLTFStudioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GLTFStudioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7F2019F2EC0DD070028C0C9 /* GLTFStudioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GLTFStudioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -199,6 +201,7 @@
 		F7F201D02EC0DE220028C0C9 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				F7313A8A2EC21717003DC984 /* GLTFParser.swift */,
 				F7F201CD2EC0DE220028C0C9 /* FileService.swift */,
 				F7F201CE2EC0DE220028C0C9 /* GLTFPackService.swift */,
 				F7F201CF2EC0DE220028C0C9 /* ProcessRunner.swift */,
@@ -376,6 +379,7 @@
 				F7F201E32EC0E5B30028C0C9 /* ProcessingState.swift in Sources */,
 				F7F201E42EC0E5B30028C0C9 /* FileService.swift in Sources */,
 				F7F201E52EC0E5B30028C0C9 /* GLTFPackService.swift in Sources */,
+				F7313A8B2EC21717003DC984 /* GLTFParser.swift in Sources */,
 				F7F201E62EC0E5B30028C0C9 /* ProcessRunner.swift in Sources */,
 				F7F201DB2EC0DF950028C0C9 /* ContentView.swift in Sources */,
 				F7F201DC2EC0DF950028C0C9 /* FilePickerView.swift in Sources */,
