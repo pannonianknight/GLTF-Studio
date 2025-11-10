@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F7313A882EC215F4003DC984 /* FilamentRenderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7313A832EC215F4003DC984 /* FilamentRenderer.mm */; };
+		F7313A892EC215F4003DC984 /* FilamentRendererMac.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7313A852EC215F4003DC984 /* FilamentRendererMac.mm */; };
 		F7EACDD42EC14A0800ABACC8 /* FilamentRendererMac.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7EACDD22EC14A0800ABACC8 /* FilamentRendererMac.mm */; };
 		F7EACDD52EC14A0800ABACC8 /* FilamentRenderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7EACDD02EC14A0800ABACC8 /* FilamentRenderer.mm */; };
 		F7EACDD62EC14A0800ABACC8 /* CameraController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F7EACDC02EC14A0800ABACC8 /* CameraController.cpp */; };
@@ -53,6 +55,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F7313A822EC215F4003DC984 /* FilamentRenderer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilamentRenderer.h; sourceTree = "<group>"; };
+		F7313A832EC215F4003DC984 /* FilamentRenderer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FilamentRenderer.mm; sourceTree = "<group>"; };
+		F7313A842EC215F4003DC984 /* FilamentRendererMac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilamentRendererMac.h; sourceTree = "<group>"; };
+		F7313A852EC215F4003DC984 /* FilamentRendererMac.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FilamentRendererMac.mm; sourceTree = "<group>"; };
+		F7313A862EC215F4003DC984 /* GLTFStudio-Bridging-Header.h .h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GLTFStudio-Bridging-Header.h .h"; sourceTree = "<group>"; };
 		F7EACDBB2EC14A0800ABACC8 /* AnimationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnimationController.h; sourceTree = "<group>"; };
 		F7EACDBC2EC14A0800ABACC8 /* AnimationController.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AnimationController.cpp; sourceTree = "<group>"; };
 		F7EACDBD2EC14A0800ABACC8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -143,6 +150,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F7313A872EC215F4003DC984 /* Filament */ = {
+			isa = PBXGroup;
+			children = (
+				F7313A822EC215F4003DC984 /* FilamentRenderer.h */,
+				F7313A832EC215F4003DC984 /* FilamentRenderer.mm */,
+				F7313A842EC215F4003DC984 /* FilamentRendererMac.h */,
+				F7313A852EC215F4003DC984 /* FilamentRendererMac.mm */,
+				F7313A862EC215F4003DC984 /* GLTFStudio-Bridging-Header.h .h */,
+			);
+			path = Filament;
+			sourceTree = "<group>";
+		};
 		F7EACDBE2EC14A0800ABACC8 /* AnimationManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +245,7 @@
 		F7F2017F2EC0DD040028C0C9 = {
 			isa = PBXGroup;
 			children = (
+				F7313A872EC215F4003DC984 /* Filament */,
 				F7EACDCE2EC14A0800ABACC8 /* Core3D */,
 				F7EACDD32EC14A0800ABACC8 /* Filament */,
 				F7F201F12EC119DC0028C0C9 /* pointy-sword.png */,
@@ -493,6 +513,8 @@
 				F7EACDD42EC14A0800ABACC8 /* FilamentRendererMac.mm in Sources */,
 				F7EACDD52EC14A0800ABACC8 /* FilamentRenderer.mm in Sources */,
 				F7EACDD62EC14A0800ABACC8 /* CameraController.cpp in Sources */,
+				F7313A882EC215F4003DC984 /* FilamentRenderer.mm in Sources */,
+				F7313A892EC215F4003DC984 /* FilamentRendererMac.mm in Sources */,
 				F7EACDD72EC14A0800ABACC8 /* AnimationController.cpp in Sources */,
 				F7EACDD82EC14A0800ABACC8 /* MaterialManager.cpp in Sources */,
 				F7F201E52EC0E5B30028C0C9 /* GLTFPackService.swift in Sources */,

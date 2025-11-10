@@ -19,10 +19,10 @@
 #import <MetalKit/MetalKit.h>
 #import "FilamentRendererMac.h"
 
-// Core3D includes (from root-level submodule)
-#include "../../Core3D/Core3D/Managers/AnimationManager/AnimationController.h"
-#include "../../Core3D/Core3D/Managers/CameraManager/CameraController.h"
-#include "../../Core3D/Core3D/Managers/MaterialManager/MaterialManager.h"
+// Core3D includes (from git submodule)
+#include "../Core3D/Core3D/Managers/AnimationManager/AnimationController.h"
+#include "../Core3D/Core3D/Managers/CameraManager/CameraController.h"
+#include "../Core3D/Core3D/Managers/MaterialManager/MaterialManager.h"
 
 // Filament C++ library includes
 #include "filament/Engine.h"
