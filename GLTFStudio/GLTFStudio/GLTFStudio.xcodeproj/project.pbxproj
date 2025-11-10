@@ -9,16 +9,19 @@
 /* Begin PBXBuildFile section */
 		F7313A882EC215F4003DC984 /* FilamentRenderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7313A832EC215F4003DC984 /* FilamentRenderer.mm */; };
 		F7313A892EC215F4003DC984 /* FilamentRendererMac.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7313A852EC215F4003DC984 /* FilamentRendererMac.mm */; };
+		F7313A8B2EC21717003DC984 /* GLTFParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7313A8A2EC21717003DC984 /* GLTFParser.swift */; };
+		F7313A922EC2173F003DC984 /* FilamentRendererMac.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7313A8F2EC2173F003DC984 /* FilamentRendererMac.mm */; };
+		F7313A932EC2173F003DC984 /* FilamentRenderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7313A8D2EC2173F003DC984 /* FilamentRenderer.mm */; };
+		F7313AA82EC2175D003DC984 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F7313A9D2EC2175D003DC984 /* README.md */; };
+		F7313AA92EC2175D003DC984 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F7313AA22EC2175D003DC984 /* README.md */; };
+		F7313AAA2EC2175D003DC984 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F7313A962EC2175D003DC984 /* README.md */; };
+		F7313AAB2EC2175D003DC984 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F7313AA42EC2175D003DC984 /* README.md */; };
+		F7313AAC2EC2175D003DC984 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F7313A9B2EC2175D003DC984 /* README.md */; };
+		F7313AAD2EC2175D003DC984 /* AnimationController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F7313A952EC2175D003DC984 /* AnimationController.cpp */; };
+		F7313AAE2EC2175D003DC984 /* CameraController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F7313A992EC2175D003DC984 /* CameraController.cpp */; };
+		F7313AAF2EC2175D003DC984 /* MaterialManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F7313AA02EC2175D003DC984 /* MaterialManager.cpp */; };
 		F7EACDD42EC14A0800ABACC8 /* FilamentRendererMac.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7EACDD22EC14A0800ABACC8 /* FilamentRendererMac.mm */; };
 		F7EACDD52EC14A0800ABACC8 /* FilamentRenderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7EACDD02EC14A0800ABACC8 /* FilamentRenderer.mm */; };
-		F7EACDD62EC14A0800ABACC8 /* CameraController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F7EACDC02EC14A0800ABACC8 /* CameraController.cpp */; };
-		F7EACDD72EC14A0800ABACC8 /* AnimationController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F7EACDBC2EC14A0800ABACC8 /* AnimationController.cpp */; };
-		F7EACDD82EC14A0800ABACC8 /* MaterialManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F7EACDC72EC14A0800ABACC8 /* MaterialManager.cpp */; };
-		F7EACDD92EC14A0800ABACC8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F7EACDC22EC14A0800ABACC8 /* README.md */; };
-		F7EACDDA2EC14A0800ABACC8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F7EACDC42EC14A0800ABACC8 /* README.md */; };
-		F7EACDDB2EC14A0800ABACC8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F7EACDCB2EC14A0800ABACC8 /* README.md */; };
-		F7EACDDC2EC14A0800ABACC8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F7EACDC92EC14A0800ABACC8 /* README.md */; };
-		F7EACDDD2EC14A0800ABACC8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F7EACDBD2EC14A0800ABACC8 /* README.md */; };
 		F7F201DA2EC0DF4A0028C0C9 /* GLTFStudioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F201D82EC0DEF70028C0C9 /* GLTFStudioApp.swift */; };
 		F7F201DB2EC0DF950028C0C9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F201C62EC0DE220028C0C9 /* ContentView.swift */; };
 		F7F201DC2EC0DF950028C0C9 /* FilePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F201C72EC0DE220028C0C9 /* FilePickerView.swift */; };
@@ -60,19 +63,25 @@
 		F7313A842EC215F4003DC984 /* FilamentRendererMac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilamentRendererMac.h; sourceTree = "<group>"; };
 		F7313A852EC215F4003DC984 /* FilamentRendererMac.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FilamentRendererMac.mm; sourceTree = "<group>"; };
 		F7313A862EC215F4003DC984 /* GLTFStudio-Bridging-Header.h .h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GLTFStudio-Bridging-Header.h .h"; sourceTree = "<group>"; };
-		F7EACDBB2EC14A0800ABACC8 /* AnimationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnimationController.h; sourceTree = "<group>"; };
-		F7EACDBC2EC14A0800ABACC8 /* AnimationController.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AnimationController.cpp; sourceTree = "<group>"; };
-		F7EACDBD2EC14A0800ABACC8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		F7EACDBF2EC14A0800ABACC8 /* CameraController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraController.h; sourceTree = "<group>"; };
-		F7EACDC02EC14A0800ABACC8 /* CameraController.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CameraController.cpp; sourceTree = "<group>"; };
-		F7EACDC12EC14A0800ABACC8 /* CameraTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraTypes.h; sourceTree = "<group>"; };
-		F7EACDC22EC14A0800ABACC8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		F7EACDC42EC14A0800ABACC8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		F7EACDC62EC14A0800ABACC8 /* MaterialManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaterialManager.h; sourceTree = "<group>"; };
-		F7EACDC72EC14A0800ABACC8 /* MaterialManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MaterialManager.cpp; sourceTree = "<group>"; };
-		F7EACDC82EC14A0800ABACC8 /* MaterialTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaterialTypes.h; sourceTree = "<group>"; };
-		F7EACDC92EC14A0800ABACC8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		F7EACDCB2EC14A0800ABACC8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F7313A8A2EC21717003DC984 /* GLTFParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLTFParser.swift; sourceTree = "<group>"; };
+		F7313A8C2EC2173F003DC984 /* FilamentRenderer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilamentRenderer.h; sourceTree = "<group>"; };
+		F7313A8D2EC2173F003DC984 /* FilamentRenderer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FilamentRenderer.mm; sourceTree = "<group>"; };
+		F7313A8E2EC2173F003DC984 /* FilamentRendererMac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilamentRendererMac.h; sourceTree = "<group>"; };
+		F7313A8F2EC2173F003DC984 /* FilamentRendererMac.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FilamentRendererMac.mm; sourceTree = "<group>"; };
+		F7313A902EC2173F003DC984 /* GLTFStudio-Bridging-Header.h .h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GLTFStudio-Bridging-Header.h .h"; sourceTree = "<group>"; };
+		F7313A942EC2175D003DC984 /* AnimationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnimationController.h; sourceTree = "<group>"; };
+		F7313A952EC2175D003DC984 /* AnimationController.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AnimationController.cpp; sourceTree = "<group>"; };
+		F7313A962EC2175D003DC984 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F7313A982EC2175D003DC984 /* CameraController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraController.h; sourceTree = "<group>"; };
+		F7313A992EC2175D003DC984 /* CameraController.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CameraController.cpp; sourceTree = "<group>"; };
+		F7313A9A2EC2175D003DC984 /* CameraTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraTypes.h; sourceTree = "<group>"; };
+		F7313A9B2EC2175D003DC984 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F7313A9D2EC2175D003DC984 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F7313A9F2EC2175D003DC984 /* MaterialManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaterialManager.h; sourceTree = "<group>"; };
+		F7313AA02EC2175D003DC984 /* MaterialManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MaterialManager.cpp; sourceTree = "<group>"; };
+		F7313AA12EC2175D003DC984 /* MaterialTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaterialTypes.h; sourceTree = "<group>"; };
+		F7313AA22EC2175D003DC984 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F7313AA42EC2175D003DC984 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F7EACDCF2EC14A0800ABACC8 /* FilamentRenderer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilamentRenderer.h; sourceTree = "<group>"; };
 		F7EACDD02EC14A0800ABACC8 /* FilamentRenderer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FilamentRenderer.mm; sourceTree = "<group>"; };
 		F7EACDD12EC14A0800ABACC8 /* FilamentRendererMac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilamentRendererMac.h; sourceTree = "<group>"; };
@@ -162,72 +171,85 @@
 			path = Filament;
 			sourceTree = "<group>";
 		};
-		F7EACDBE2EC14A0800ABACC8 /* AnimationManager */ = {
+		F7313A912EC2173F003DC984 /* Filament */ = {
 			isa = PBXGroup;
 			children = (
-				F7EACDBB2EC14A0800ABACC8 /* AnimationController.h */,
-				F7EACDBC2EC14A0800ABACC8 /* AnimationController.cpp */,
-				F7EACDBD2EC14A0800ABACC8 /* README.md */,
+				F7313A8C2EC2173F003DC984 /* FilamentRenderer.h */,
+				F7313A8D2EC2173F003DC984 /* FilamentRenderer.mm */,
+				F7313A8E2EC2173F003DC984 /* FilamentRendererMac.h */,
+				F7313A8F2EC2173F003DC984 /* FilamentRendererMac.mm */,
+				F7313A902EC2173F003DC984 /* GLTFStudio-Bridging-Header.h .h */,
+			);
+			path = Filament;
+			sourceTree = "<group>";
+		};
+		F7313A972EC2175D003DC984 /* AnimationManager */ = {
+			isa = PBXGroup;
+			children = (
+				F7313A942EC2175D003DC984 /* AnimationController.h */,
+				F7313A952EC2175D003DC984 /* AnimationController.cpp */,
+				F7313A962EC2175D003DC984 /* README.md */,
 			);
 			path = AnimationManager;
 			sourceTree = "<group>";
 		};
-		F7EACDC32EC14A0800ABACC8 /* CameraManager */ = {
+		F7313A9C2EC2175D003DC984 /* CameraManager */ = {
 			isa = PBXGroup;
 			children = (
-				F7EACDBF2EC14A0800ABACC8 /* CameraController.h */,
-				F7EACDC02EC14A0800ABACC8 /* CameraController.cpp */,
-				F7EACDC12EC14A0800ABACC8 /* CameraTypes.h */,
-				F7EACDC22EC14A0800ABACC8 /* README.md */,
+				F7313A982EC2175D003DC984 /* CameraController.h */,
+				F7313A992EC2175D003DC984 /* CameraController.cpp */,
+				F7313A9A2EC2175D003DC984 /* CameraTypes.h */,
+				F7313A9B2EC2175D003DC984 /* README.md */,
 			);
 			path = CameraManager;
 			sourceTree = "<group>";
 		};
-		F7EACDC52EC14A0800ABACC8 /* ManifestReader */ = {
+		F7313A9E2EC2175D003DC984 /* ManifestReader */ = {
 			isa = PBXGroup;
 			children = (
-				F7EACDC42EC14A0800ABACC8 /* README.md */,
+				F7313A9D2EC2175D003DC984 /* README.md */,
 			);
 			path = ManifestReader;
 			sourceTree = "<group>";
 		};
-		F7EACDCA2EC14A0800ABACC8 /* MaterialManager */ = {
+		F7313AA32EC2175D003DC984 /* MaterialManager */ = {
 			isa = PBXGroup;
 			children = (
-				F7EACDC62EC14A0800ABACC8 /* MaterialManager.h */,
-				F7EACDC72EC14A0800ABACC8 /* MaterialManager.cpp */,
-				F7EACDC82EC14A0800ABACC8 /* MaterialTypes.h */,
-				F7EACDC92EC14A0800ABACC8 /* README.md */,
+				F7313A9F2EC2175D003DC984 /* MaterialManager.h */,
+				F7313AA02EC2175D003DC984 /* MaterialManager.cpp */,
+				F7313AA12EC2175D003DC984 /* MaterialTypes.h */,
+				F7313AA22EC2175D003DC984 /* README.md */,
 			);
 			path = MaterialManager;
 			sourceTree = "<group>";
 		};
-		F7EACDCC2EC14A0800ABACC8 /* TelemetryManager */ = {
+		F7313AA52EC2175D003DC984 /* TelemetryManager */ = {
 			isa = PBXGroup;
 			children = (
-				F7EACDCB2EC14A0800ABACC8 /* README.md */,
+				F7313AA42EC2175D003DC984 /* README.md */,
 			);
 			path = TelemetryManager;
 			sourceTree = "<group>";
 		};
-		F7EACDCD2EC14A0800ABACC8 /* Managers */ = {
+		F7313AA62EC2175D003DC984 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				F7EACDBE2EC14A0800ABACC8 /* AnimationManager */,
-				F7EACDC32EC14A0800ABACC8 /* CameraManager */,
-				F7EACDC52EC14A0800ABACC8 /* ManifestReader */,
-				F7EACDCA2EC14A0800ABACC8 /* MaterialManager */,
-				F7EACDCC2EC14A0800ABACC8 /* TelemetryManager */,
+				F7313A972EC2175D003DC984 /* AnimationManager */,
+				F7313A9C2EC2175D003DC984 /* CameraManager */,
+				F7313A9E2EC2175D003DC984 /* ManifestReader */,
+				F7313AA32EC2175D003DC984 /* MaterialManager */,
+				F7313AA52EC2175D003DC984 /* TelemetryManager */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
 		};
-		F7EACDCE2EC14A0800ABACC8 /* Core3D */ = {
+		F7313AA72EC2175D003DC984 /* Core3D */ = {
 			isa = PBXGroup;
 			children = (
-				F7EACDCD2EC14A0800ABACC8 /* Managers */,
+				F7313AA62EC2175D003DC984 /* Managers */,
 			);
-			path = Core3D;
+			name = Core3D;
+			path = Core3D/Core3D;
 			sourceTree = "<group>";
 		};
 		F7EACDD32EC14A0800ABACC8 /* Filament */ = {
@@ -245,8 +267,9 @@
 		F7F2017F2EC0DD040028C0C9 = {
 			isa = PBXGroup;
 			children = (
+				F7313AA72EC2175D003DC984 /* Core3D */,
+				F7313A912EC2173F003DC984 /* Filament */,
 				F7313A872EC215F4003DC984 /* Filament */,
-				F7EACDCE2EC14A0800ABACC8 /* Core3D */,
 				F7EACDD32EC14A0800ABACC8 /* Filament */,
 				F7F201F12EC119DC0028C0C9 /* pointy-sword.png */,
 				F7F201F02EC119DB0028C0C9 /* sword-spin.png */,
@@ -329,6 +352,7 @@
 		F7F201D02EC0DE220028C0C9 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				F7313A8A2EC21717003DC984 /* GLTFParser.swift */,
 				F7F201CD2EC0DE220028C0C9 /* FileService.swift */,
 				F7F201CE2EC0DE220028C0C9 /* GLTFPackService.swift */,
 				F7F201CF2EC0DE220028C0C9 /* ProcessRunner.swift */,
@@ -477,11 +501,11 @@
 				F7F201F22EC119DC0028C0C9 /* sword-spin.png in Resources */,
 				F7F201F32EC119DC0028C0C9 /* pointy-sword.png in Resources */,
 				F7F201E82EC0E9F50028C0C9 /* gltfpack in Resources */,
-				F7EACDD92EC14A0800ABACC8 /* README.md in Resources */,
-				F7EACDDA2EC14A0800ABACC8 /* README.md in Resources */,
-				F7EACDDB2EC14A0800ABACC8 /* README.md in Resources */,
-				F7EACDDC2EC14A0800ABACC8 /* README.md in Resources */,
-				F7EACDDD2EC14A0800ABACC8 /* README.md in Resources */,
+				F7313AA82EC2175D003DC984 /* README.md in Resources */,
+				F7313AA92EC2175D003DC984 /* README.md in Resources */,
+				F7313AAA2EC2175D003DC984 /* README.md in Resources */,
+				F7313AAB2EC2175D003DC984 /* README.md in Resources */,
+				F7313AAC2EC2175D003DC984 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,16 +532,19 @@
 			files = (
 				F7F201E12EC0E5B30028C0C9 /* GLTFStats.swift in Sources */,
 				F7F201E22EC0E5B30028C0C9 /* OptimizationConfig.swift in Sources */,
+				F7313A922EC2173F003DC984 /* FilamentRendererMac.mm in Sources */,
+				F7313A932EC2173F003DC984 /* FilamentRenderer.mm in Sources */,
+				F7313AAD2EC2175D003DC984 /* AnimationController.cpp in Sources */,
+				F7313AAE2EC2175D003DC984 /* CameraController.cpp in Sources */,
+				F7313AAF2EC2175D003DC984 /* MaterialManager.cpp in Sources */,
 				F7F201E32EC0E5B30028C0C9 /* ProcessingState.swift in Sources */,
 				F7F201E42EC0E5B30028C0C9 /* FileService.swift in Sources */,
 				F7EACDD42EC14A0800ABACC8 /* FilamentRendererMac.mm in Sources */,
 				F7EACDD52EC14A0800ABACC8 /* FilamentRenderer.mm in Sources */,
-				F7EACDD62EC14A0800ABACC8 /* CameraController.cpp in Sources */,
 				F7313A882EC215F4003DC984 /* FilamentRenderer.mm in Sources */,
 				F7313A892EC215F4003DC984 /* FilamentRendererMac.mm in Sources */,
-				F7EACDD72EC14A0800ABACC8 /* AnimationController.cpp in Sources */,
-				F7EACDD82EC14A0800ABACC8 /* MaterialManager.cpp in Sources */,
 				F7F201E52EC0E5B30028C0C9 /* GLTFPackService.swift in Sources */,
+				F7313A8B2EC21717003DC984 /* GLTFParser.swift in Sources */,
 				F7F201E62EC0E5B30028C0C9 /* ProcessRunner.swift in Sources */,
 				F7F201DB2EC0DF950028C0C9 /* ContentView.swift in Sources */,
 				F7F201DC2EC0DF950028C0C9 /* FilePickerView.swift in Sources */,
