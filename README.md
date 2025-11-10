@@ -2,21 +2,17 @@
 
 <img width="128" height="128" alt="Icon-iOS-Default-256x256@1x" src="https://github.com/user-attachments/assets/e830bde5-57bf-4511-85b7-fa40c6a13e56" />
 
+macOS application for glTF/GLB 3D model optimization. Targets mobile rendering engines (Filament, ARKit, ARCore) and web platforms.
 
-<div align="center">
-  <h3>🎨 Professional glTF/GLB Optimization for macOS</h3>
-  <p>User-friendly GUI for optimizing 3D models for mobile and web platforms</p>
-</div>
+## Features
 
-## 🚀 Features
-
-- **Drag & Drop Interface** - Simple file selection for glTF and GLB files
-- **Preset System** - Quick optimization with Low/Balanced/High quality presets
-- **Custom Controls** - Fine-tune texture compression and mesh quantization
-- **Real-time Stats** - View file size reduction and compression ratio
-- **Mobile-Ready** - Optimized for iOS/Android rendering with Filament
-- **Texture Compression** - ETC1S and UASTC formats via Basis Universal
-- **Mesh Optimization** - Advanced vertex quantization and compression
+- Drag & drop interface for .glb and .gltf files
+- Preset-based optimization (Low/Balanced/High quality)
+- Custom texture compression controls (ETC1S, UASTC via Basis Universal)
+- Mesh optimization with vertex quantization (8-16 bit)
+- Real-time file size and compression statistics
+- Animation detection with smart optimization
+- Live processing logs
 
 ## 📋 Requirements
 
@@ -115,80 +111,54 @@ cmake --build . --target gltfpack --config Release
 - **Texture Coords**: 8-16 bits
 - **Normals**: 8-16 bits
 
-## 🎯 Target Platforms
+## Target Platforms
 
-GLTFStudio is optimized for preparing models for:
-- **iOS/Android** (Filament)
-- **WebGL/WebGPU** (Three.js, Babylon.js)
-- **Game Engines** (Unity, Unreal, Godot)
+- iOS/Android (Filament, ARKit, ARCore)
+- WebGL/WebGPU (Three.js, Babylon.js)
+- Game Engines (Unity, Unreal, Godot)
 
-## 📊 Technical Details
+## Technical Details
 
-### Powered By
-- [meshoptimizer](https://github.com/zeux/meshoptimizer) - Mesh optimization library
-- [basis_universal](https://github.com/BinomialLLC/basis_universal) - Texture compression
-- [gltfpack](https://github.com/zeux/meshoptimizer/tree/master/gltf) - glTF optimization CLI
+Built with Swift 6.0 and SwiftUI for macOS 13.0+.
+
+### Dependencies
+- [meshoptimizer](https://github.com/zeux/meshoptimizer) - Mesh optimization (MIT License)
+- [basis_universal](https://github.com/BinomialLLC/basis_universal) - Texture compression (Apache 2.0)
+- gltfpack - Command-line optimization tool (bundled)
 
 ### Optimization Pipeline
-1. **Mesh Processing**: Vertex cache optimization, overdraw reduction, vertex fetch optimization
-2. **Attribute Quantization**: Reduce vertex attribute precision
-3. **Mesh Compression**: Apply mesh compression codec
-4. **Texture Compression**: Basis Universal ETC1S/UASTC encoding
-5. **Texture Resizing**: Downscale textures to target resolution
-6. **File Packing**: Optimize glTF structure and remove unused data
+1. Model analysis (animations, skins, mesh count)
+2. Vertex cache optimization and overdraw reduction
+3. Attribute quantization (8-16 bit precision)
+4. Mesh compression codec
+5. Basis Universal texture compression (KTX2 format)
+6. Texture resizing and power-of-two normalization
 
-## 🐛 Known Issues
+## Known Issues
 
 - Large files (>100MB) may take several minutes to process
 - First run may show security warning (right-click > Open to bypass)
-- Progress bar shows indeterminate progress (no percentage yet)
-- Texture compression requires proper entitlements (included in build)
+- Texture compression requires app sandbox entitlements
 
-## 🗺️ Roadmap
+## Planned Features
 
-- [ ] Batch processing support
-- [ ] Real-time 3D preview
-- [ ] Draco compression support
-- [ ] Comparison viewer (before/after)
-- [ ] Animation optimization
-- [ ] CLI version for automation
-- [ ] Cloud processing option
+- Filament-powered 3D preview (original vs optimized comparison)
+- HDR environment map editing tools
+- Batch processing
+- Draco compression support
+- CLI version
 
-## 🤝 Contributing
+## License
 
-Contributions are welcome!
+MIT License - see [LICENSE](LICENSE) file.
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+### Third-Party Components
+- **meshoptimizer** - MIT License (Arseny Kapoulkine)
+- **basis_universal** - Apache 2.0 License (Binomial LLC)
 
-## 📄 License
+Full license texts available in `Resources/Licenses/` directory.
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## Links
 
-### Third-Party Licenses
-- meshoptimizer - MIT License
-- basis_universal - Apache 2.0 License
-- gltf-transform - MIT License
-
-See `Resources/Licenses/` directory for full license texts.
-
-## 🙏 Acknowledgments
-
-- [Arseny Kapoulkine](https://github.com/zeux) for meshoptimizer and gltfpack
-- [Binomial LLC](https://github.com/BinomialLLC) for Basis Universal
-- [Don McCurdy](https://github.com/donmccurdy) for glTF Transform
-- Khronos Group for the glTF specification
-
-## 📧 Contact
-
-- GitHub Issues: [Report a bug](https://github.com/pannonianknight/GLTF-Studio/issues)
-- GitHub Repo: [GLTF-Studio](https://github.com/pannonianknight/GLTF-Studio)
-
----
-
-<div align="center">
-  Made with ❤️ for the 3D community
-</div>
+- GitHub: [GLTF-Studio](https://github.com/pannonianknight/GLTF-Studio)
+- Issues: [Report a bug](https://github.com/pannonianknight/GLTF-Studio/issues)

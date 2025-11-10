@@ -1,55 +1,69 @@
-# Xcode Setup - GLTFStudio
+# Build Instructions
 
-## 1. Build gltfpack (5 min)
+## Requirements
+
+- Xcode 15.0+
+- macOS 13.0+
+- Command Line Tools: `xcode-select --install`
+
+## Build Steps
+
+### 1. Clone Repository
 
 ```bash
-cd /Users/markofucek/Desktop/GLTF-Studio
+git clone https://github.com/pannonianknight/GLTF-Studio.git
+cd GLTF-Studio
+```
+
+### 2. Build gltfpack Binary
+
+```bash
 ./build_gltfpack.sh
 ```
 
-Čekaj dok se završi build...
+This downloads and compiles meshoptimizer with gltfpack support (universal binary for Intel + Apple Silicon).
 
-## 2. Xcode Projekt
+### 3. Open Project
 
-### Kreiraj projekt
-1. Otvori Xcode
-2. File → New → Project (Cmd+Shift+N)
-3. **macOS → App** → Next
-4. Popuni:
-   - Product Name: `GLTFStudio`
-   - Interface: SwiftUI
-   - Language: Swift
-5. Save u: `/Users/markofucek/Desktop/GLTF-Studio/`
+```bash
+open GLTFStudio/GLTFStudio/GLTFStudio.xcodeproj
+```
 
-### Obriši default fajlove
-- Desni klik na `ContentView.swift` → Delete → Move to Trash
-- Desni klik na `GLTFStudioApp.swift` → Delete → Move to Trash
+### 4. Configure Signing
 
-### Dodaj naše fajlove
-1. Desni klik na `GLTFStudio` folder
-2. **Add Files to "GLTFStudio"...**
-3. Odaberi:
-   - GLTFStudioApp.swift
-   - Models folder
-   - Services folder
-   - Views folder
-   - Resources folder
-4. **Unchecked**: Copy items if needed
-5. **Checked**: Add to targets: GLTFStudio
-6. Add
+1. Select GLTFStudio project (blue icon)
+2. Select GLTFStudio target
+3. Signing & Capabilities → Select your Team
 
-## 3. Build Settings
+### 5. Build
 
-1. Klikni plavi GLTFStudio projekt (top)
-2. Target: GLTFStudio
-3. **General**: Minimum Deployments → **macOS 13.0**
-4. **Signing & Capabilities**: Odaberi Team
-5. **Build Phases** → Copy Bundle Resources:
-   - Mora biti tu: `gltfpack` (u Binaries)
+```
+Cmd+B
+```
 
-## 4. Run
+### 6. Run
 
+```
 Cmd+R
+```
 
-Done! 🚀
+## Distribution
+
+### Create Standalone App
+
+**Option 1: Archive**
+```
+Product → Archive → Distribute App → Copy App
+```
+
+**Option 2: Terminal**
+```bash
+cd GLTFStudio/GLTFStudio
+xcodebuild -project GLTFStudio.xcodeproj \
+           -scheme GLTFStudio \
+           -configuration Release \
+           clean archive
+```
+
+App location: `~/Library/Developer/Xcode/Archives/`
 

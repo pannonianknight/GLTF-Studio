@@ -111,16 +111,13 @@ actor GLTFPackService {
         stats.startProcessing()
         
         // Build command arguments with animation awareness
-        var arguments = config.buildGltfpackArguments(
+        let arguments = config.buildGltfpackArguments(
             inputPath: inputURL.path,
             outputPath: outputURL.path
         )
         
-        // Add skin weight normalization only if NO animations
-        if !hasAnimations {
-            arguments.append("-si")  // Normalize skin weights
-            print("🔧 [GLTFPACK] Adding -si (skin weight normalization)")
-        }
+        // Note: -si flag removed - not supported in current gltfpack version
+        // Animation detection still logged for informational purposes
         
         // Log command for debugging
         let command = ([gltfpackPath] + arguments).joined(separator: " ")
