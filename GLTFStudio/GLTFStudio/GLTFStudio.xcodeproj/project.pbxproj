@@ -7,11 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F7313A882EC215F4003DC984 /* FilamentRenderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7313A832EC215F4003DC984 /* FilamentRenderer.mm */; };
-		F7313A892EC215F4003DC984 /* FilamentRendererMac.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7313A852EC215F4003DC984 /* FilamentRendererMac.mm */; };
 		F7313A8B2EC21717003DC984 /* GLTFParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7313A8A2EC21717003DC984 /* GLTFParser.swift */; };
-		F7313A922EC2173F003DC984 /* FilamentRendererMac.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7313A8F2EC2173F003DC984 /* FilamentRendererMac.mm */; };
-		F7313A932EC2173F003DC984 /* FilamentRenderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7313A8D2EC2173F003DC984 /* FilamentRenderer.mm */; };
 		F7313AA82EC2175D003DC984 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F7313A9D2EC2175D003DC984 /* README.md */; };
 		F7313AA92EC2175D003DC984 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F7313AA22EC2175D003DC984 /* README.md */; };
 		F7313AAA2EC2175D003DC984 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F7313A962EC2175D003DC984 /* README.md */; };
@@ -20,8 +16,6 @@
 		F7313AAD2EC2175D003DC984 /* AnimationController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F7313A952EC2175D003DC984 /* AnimationController.cpp */; };
 		F7313AAE2EC2175D003DC984 /* CameraController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F7313A992EC2175D003DC984 /* CameraController.cpp */; };
 		F7313AAF2EC2175D003DC984 /* MaterialManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F7313AA02EC2175D003DC984 /* MaterialManager.cpp */; };
-		F7EACDD42EC14A0800ABACC8 /* FilamentRendererMac.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7EACDD22EC14A0800ABACC8 /* FilamentRendererMac.mm */; };
-		F7EACDD52EC14A0800ABACC8 /* FilamentRenderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7EACDD02EC14A0800ABACC8 /* FilamentRenderer.mm */; };
 		F7F201DA2EC0DF4A0028C0C9 /* GLTFStudioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F201D82EC0DEF70028C0C9 /* GLTFStudioApp.swift */; };
 		F7F201DB2EC0DF950028C0C9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F201C62EC0DE220028C0C9 /* ContentView.swift */; };
 		F7F201DC2EC0DF950028C0C9 /* FilePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F201C72EC0DE220028C0C9 /* FilePickerView.swift */; };
@@ -58,17 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F7313A822EC215F4003DC984 /* FilamentRenderer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilamentRenderer.h; sourceTree = "<group>"; };
-		F7313A832EC215F4003DC984 /* FilamentRenderer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FilamentRenderer.mm; sourceTree = "<group>"; };
-		F7313A842EC215F4003DC984 /* FilamentRendererMac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilamentRendererMac.h; sourceTree = "<group>"; };
-		F7313A852EC215F4003DC984 /* FilamentRendererMac.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FilamentRendererMac.mm; sourceTree = "<group>"; };
-		F7313A862EC215F4003DC984 /* GLTFStudio-Bridging-Header.h .h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GLTFStudio-Bridging-Header.h .h"; sourceTree = "<group>"; };
 		F7313A8A2EC21717003DC984 /* GLTFParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLTFParser.swift; sourceTree = "<group>"; };
-		F7313A8C2EC2173F003DC984 /* FilamentRenderer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilamentRenderer.h; sourceTree = "<group>"; };
-		F7313A8D2EC2173F003DC984 /* FilamentRenderer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FilamentRenderer.mm; sourceTree = "<group>"; };
-		F7313A8E2EC2173F003DC984 /* FilamentRendererMac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilamentRendererMac.h; sourceTree = "<group>"; };
-		F7313A8F2EC2173F003DC984 /* FilamentRendererMac.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FilamentRendererMac.mm; sourceTree = "<group>"; };
-		F7313A902EC2173F003DC984 /* GLTFStudio-Bridging-Header.h .h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GLTFStudio-Bridging-Header.h .h"; sourceTree = "<group>"; };
 		F7313A942EC2175D003DC984 /* AnimationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnimationController.h; sourceTree = "<group>"; };
 		F7313A952EC2175D003DC984 /* AnimationController.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AnimationController.cpp; sourceTree = "<group>"; };
 		F7313A962EC2175D003DC984 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -82,11 +66,6 @@
 		F7313AA12EC2175D003DC984 /* MaterialTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaterialTypes.h; sourceTree = "<group>"; };
 		F7313AA22EC2175D003DC984 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F7313AA42EC2175D003DC984 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		F7EACDCF2EC14A0800ABACC8 /* FilamentRenderer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilamentRenderer.h; sourceTree = "<group>"; };
-		F7EACDD02EC14A0800ABACC8 /* FilamentRenderer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FilamentRenderer.mm; sourceTree = "<group>"; };
-		F7EACDD12EC14A0800ABACC8 /* FilamentRendererMac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilamentRendererMac.h; sourceTree = "<group>"; };
-		F7EACDD22EC14A0800ABACC8 /* FilamentRendererMac.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FilamentRendererMac.mm; sourceTree = "<group>"; };
-		F7EACDDE2EC14A4200ABACC8 /* GLTFStudio-Bridging-Header.h .h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GLTFStudio-Bridging-Header.h .h"; sourceTree = "<group>"; };
 		F7F201882EC0DD040028C0C9 /* GLTFStudio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GLTFStudio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7F201952EC0DD060028C0C9 /* GLTFStudioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GLTFStudioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7F2019F2EC0DD070028C0C9 /* GLTFStudioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GLTFStudioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,30 +138,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F7313A872EC215F4003DC984 /* Filament */ = {
-			isa = PBXGroup;
-			children = (
-				F7313A822EC215F4003DC984 /* FilamentRenderer.h */,
-				F7313A832EC215F4003DC984 /* FilamentRenderer.mm */,
-				F7313A842EC215F4003DC984 /* FilamentRendererMac.h */,
-				F7313A852EC215F4003DC984 /* FilamentRendererMac.mm */,
-				F7313A862EC215F4003DC984 /* GLTFStudio-Bridging-Header.h .h */,
-			);
-			path = Filament;
-			sourceTree = "<group>";
-		};
-		F7313A912EC2173F003DC984 /* Filament */ = {
-			isa = PBXGroup;
-			children = (
-				F7313A8C2EC2173F003DC984 /* FilamentRenderer.h */,
-				F7313A8D2EC2173F003DC984 /* FilamentRenderer.mm */,
-				F7313A8E2EC2173F003DC984 /* FilamentRendererMac.h */,
-				F7313A8F2EC2173F003DC984 /* FilamentRendererMac.mm */,
-				F7313A902EC2173F003DC984 /* GLTFStudio-Bridging-Header.h .h */,
-			);
-			path = Filament;
-			sourceTree = "<group>";
-		};
 		F7313A972EC2175D003DC984 /* AnimationManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,25 +207,10 @@
 			path = Core3D/Core3D;
 			sourceTree = "<group>";
 		};
-		F7EACDD32EC14A0800ABACC8 /* Filament */ = {
-			isa = PBXGroup;
-			children = (
-				F7EACDCF2EC14A0800ABACC8 /* FilamentRenderer.h */,
-				F7EACDD02EC14A0800ABACC8 /* FilamentRenderer.mm */,
-				F7EACDD12EC14A0800ABACC8 /* FilamentRendererMac.h */,
-				F7EACDD22EC14A0800ABACC8 /* FilamentRendererMac.mm */,
-				F7EACDDE2EC14A4200ABACC8 /* GLTFStudio-Bridging-Header.h .h */,
-			);
-			path = Filament;
-			sourceTree = "<group>";
-		};
 		F7F2017F2EC0DD040028C0C9 = {
 			isa = PBXGroup;
 			children = (
 				F7313AA72EC2175D003DC984 /* Core3D */,
-				F7313A912EC2173F003DC984 /* Filament */,
-				F7313A872EC215F4003DC984 /* Filament */,
-				F7EACDD32EC14A0800ABACC8 /* Filament */,
 				F7F201F12EC119DC0028C0C9 /* pointy-sword.png */,
 				F7F201F02EC119DB0028C0C9 /* sword-spin.png */,
 				F7F201E72EC0E9F50028C0C9 /* gltfpack */,
@@ -532,17 +472,11 @@
 			files = (
 				F7F201E12EC0E5B30028C0C9 /* GLTFStats.swift in Sources */,
 				F7F201E22EC0E5B30028C0C9 /* OptimizationConfig.swift in Sources */,
-				F7313A922EC2173F003DC984 /* FilamentRendererMac.mm in Sources */,
-				F7313A932EC2173F003DC984 /* FilamentRenderer.mm in Sources */,
 				F7313AAD2EC2175D003DC984 /* AnimationController.cpp in Sources */,
 				F7313AAE2EC2175D003DC984 /* CameraController.cpp in Sources */,
 				F7313AAF2EC2175D003DC984 /* MaterialManager.cpp in Sources */,
 				F7F201E32EC0E5B30028C0C9 /* ProcessingState.swift in Sources */,
 				F7F201E42EC0E5B30028C0C9 /* FileService.swift in Sources */,
-				F7EACDD42EC14A0800ABACC8 /* FilamentRendererMac.mm in Sources */,
-				F7EACDD52EC14A0800ABACC8 /* FilamentRenderer.mm in Sources */,
-				F7313A882EC215F4003DC984 /* FilamentRenderer.mm in Sources */,
-				F7313A892EC215F4003DC984 /* FilamentRendererMac.mm in Sources */,
 				F7F201E52EC0E5B30028C0C9 /* GLTFPackService.swift in Sources */,
 				F7313A8B2EC21717003DC984 /* GLTFParser.swift in Sources */,
 				F7F201E62EC0E5B30028C0C9 /* ProcessRunner.swift in Sources */,
