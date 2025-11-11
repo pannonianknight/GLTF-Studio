@@ -17,22 +17,26 @@ actor GLTFPackService {
     
     /// Get the path to the bundled gltfpack binary
     private func getGltfpackPath() -> String? {
-        // Try to find in bundle Resources/Binaries
-        if let path = Bundle.main.path(forResource: "gltfpack", ofType: nil, inDirectory: "Binaries") {
+        // Try root of Resources folder first (this is where Xcode copies it)
+        if let path = Bundle.main.path(forResource: "gltfpack", ofType: nil) {
+            print("✅ [GLTFPACK] Found at: \(path)")
             return path
         }
         
-        // Try alternative location (root of Resources)
-        if let path = Bundle.main.path(forResource: "gltfpack", ofType: nil) {
+        // Try Resources/Binaries subdirectory
+        if let path = Bundle.main.path(forResource: "gltfpack", ofType: nil, inDirectory: "Binaries") {
+            print("✅ [GLTFPACK] Found at: \(path)")
             return path
         }
         
         // For development: try finding in project directory
-        let projectPath = "/Users/markofucek/Desktop/GLTF-Studio/GLTFStudio/Resources/Binaries/gltfpack"
-        if ProcessRunner.executableExists(at: projectPath) {
-            return projectPath
+        let devPath = FileManager.default.currentDirectoryPath + "/Resources/Binaries/gltfpack"
+        if ProcessRunner.executableExists(at: devPath) {
+            print("✅ [GLTFPACK] Found at: \(devPath)")
+            return devPath
         }
         
+        print("❌ [GLTFPACK] Not found in bundle")
         return nil
     }
     
